@@ -29,15 +29,28 @@ public class Cube : MonoBehaviour
             moveDir.y += gravity * Time.deltaTime;
         }
 
+
+        if(moveDir.x == 0 && moveDir.y == 0)
+        {
+            return;
+        }
+
+
         lookDir = Vector3.forward * moveDir.z + Vector3.right * moveDir.x;
 
 
+       
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            moveDir.y += jump;
+            myCC.Move(Vector3.up * 5f);
         }
-            transform.forward = lookDir;
-            myCC.Move(moveDir * Time.deltaTime);
+
+        transform.forward = lookDir;
+        myCC.Move(moveDir * Time.deltaTime);
+
+
+    
        
     }
 }
