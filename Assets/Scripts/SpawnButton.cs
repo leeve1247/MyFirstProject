@@ -6,7 +6,7 @@ public class SpawnButton : MonoBehaviour
 {
 
 
-[SerializeField] Button myButton;
+[SerializeField] MyButton myButton;
 
 
     // Start is called before the first frame update
